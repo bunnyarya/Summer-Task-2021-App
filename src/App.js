@@ -1,31 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
-//import Navbar from './Components/Navbar';
-import Like from './Components/Like';
-import Dislike from './Components/Unlike'
+import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import Article from "./Articles";
+import Home from "./Home";
+
+import Navbar from "./Components/Navbar";
+
+
+
 
 function App() {
   return (
-    
-  <div className="App-header">
-    <div className="App">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-          Learn React
-      <div className="inline">
-          <ul>
-            <li>
-              <Like />
-            </li>
-            <li>
-              <Dislike />
-            </li>
-          </ul>
+    <Router>
+      <div className="App-header">
+      <Navbar />
+
+        <div className="App">
+        
+          <Switch>
+            <Route exact path='/'>
+              <Home />
+            </Route>
+            <Route exact path='/Article'>
+              <Article />
+            </Route>
+            <Route exact path='/Adminpanel'>
+              <Article />
+            </Route>
+          </Switch>
+        </div>
       </div>
-    </div>
-  </div>
+    </Router>
   );
 }
 
