@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from '@material-ui/core/Button';
 
 class Dislike extends Component
 {
@@ -15,25 +16,23 @@ class Dislike extends Component
     IncrementItem = () =>
     {
     this.setState({ clicks: this.state.clicks + 1 });
-
     }
+
     DecreaseItem = () =>
     {
     this.setState({ clicks: this.state.clicks - 1 });
-    }
-    ToggleClick = () =>
-    {
-    this.setState({ show: !this.state.show });
     }
 
     render()
     {
     return (
     <div>
-        <button onClick={this.IncrementItem}>Like</button>
-        <button onClick={this.ToggleClick}>
-        { this.state.show ? 'Hide number' : 'Show number' }
-        </button>
+            <Button
+                onClick={this.IncrementItem}
+                variant="contained"
+                color="secondary"
+                size="small"
+            >Disike</Button>
         { this.state.show ? <h2>{ this.state.clicks }</h2> : '' }
     </div>
     );
