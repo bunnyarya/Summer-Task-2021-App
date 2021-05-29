@@ -165,7 +165,7 @@ export default function PrimarySearchAppBar() {
 
     return (
         <div className={classes.grow}>
-            <AppBar position="static">
+            <AppBar position="fixed">
                 <Toolbar>
                     <IconButton
                         edge="start"
@@ -204,9 +204,9 @@ export default function PrimarySearchAppBar() {
                         <IconButton aria-label="show 17 new notifications" color="inherit">
                             <Badge badgeContent={0} color="primary">
 
-                                <Link to='/Article'>
-                                    <MailIcon />Article
-                    </Link>
+                                <Link to='/Articles'>
+                                    <MailIcon />Articles
+                                </Link>
                             </Badge>
                         </IconButton>
                         <IconButton
