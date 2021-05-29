@@ -1,10 +1,13 @@
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Article from "./Articles";
+import Articles from "./Articles";
+import Article from "./Article";
 import Home from "./Home";
+import Adminpanel from "./Adminpanel";
 
 import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 
 
 
@@ -21,14 +24,18 @@ function App() {
             <Route exact path='/'>
               <Home />
             </Route>
-            <Route exact path='/Article'>
-              <Article />
+            <Route exact path='/Articles'>
+              <Articles />
             </Route>
             <Route exact path='/Adminpanel'>
+              <Adminpanel />
+            </Route>
+            <Route exact path='/Article'>
               <Article />
             </Route>
           </Switch>
         </div>
+        <Footer />
       </div>
     </Router>
   );
